@@ -6,4 +6,8 @@ class Author < ApplicationRecord
     @last_name = params[:last_name]
     @homepage = params[:homepage]
   end
+
+  def name
+    @first_name + " " + @last_name
+  end
 end
