@@ -7,4 +7,7 @@ class Author < ApplicationRecord
     @homepage = params[:homepage]
   end
 
+  def name
+    @first_name + " " + @last_name
+  end
 end
