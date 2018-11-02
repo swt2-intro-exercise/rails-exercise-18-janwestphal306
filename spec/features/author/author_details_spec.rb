@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Author Details Page' do
+describe 'Author Details Page', type: :feature do
   it 'should display author details' do
     @alan = FactoryBot.create :author
     visit author_path(@alan)
