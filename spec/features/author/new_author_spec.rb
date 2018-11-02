@@ -20,6 +20,6 @@ describe "New author page", type: :feature do
     fill_in "author[homepage]", with: "http://wikipedia.de/Alan_Turing"
     find('input[type="submit"]').click
 
-    expect(page).to have_div("error_explanation")
+    expect(page).to have_css("div#error_explanation")
   end
 end
