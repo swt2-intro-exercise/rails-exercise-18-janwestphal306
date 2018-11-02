@@ -11,7 +11,7 @@ describe 'Author Details Page', type: :feature do
 
   it 'should have a link to the edit page' do
     @alan = FactoryBot.create :author
-    visit author_path(@alan)
+    visit authors_path
     expect(page).to have_link "Edit", href: edit_author_path(@alan)
   end
 end
