@@ -13,4 +13,9 @@ describe 'Author Model', type: :model do
     @author = FactoryBot.create :author
     expect(@author.name).to eq("Alan Turing")
   end
+
+  it "should reject author without last name" do
+    @author = Author.new(first_name: "Alan", last_name: nil, homepage: "http://wikipedia.de/Alan_Turing")
+    expect(@author).to_not be_valid
+  end
 end
