@@ -13,4 +13,13 @@ describe "New author page", type: :feature do
     expect(page).to have_field('author[homepage]')
     expect(page).to have_css('input[type="submit"]')
   end
+
+  it "should show an error message for a author without last name" do
+    visit new_author_path
+    fill_in "author[first_name]", with: "Alan"
+    fill_in "author[homepage]", with: "http://wikipedia.de/Alan_Turing"
+    find('input[type="submit"]').click
+
+    expect(page).to have_div("error_explanation")
+  end
 end
